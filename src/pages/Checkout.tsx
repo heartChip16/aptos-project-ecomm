@@ -11,7 +11,7 @@ import { clearCheckoutInfo } from '../feature/checkout-slice';
 
 const steps = ["Shipping Address", "Payment Details", "Review Order"];
 
-function getStepContent(activeStep) {
+function getStepContent(activeStep: any) {
     switch (activeStep) {
         case 0:
             return <AddressForm />;

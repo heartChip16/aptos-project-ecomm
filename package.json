@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^2.0.1",
+    "@aptos-labs/wallet-adapter-ant-design": "^4.0.21",
+    "@aptos-labs/wallet-adapter-react": "^6.1.1",
     "@babel/core": "^7.20.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -20,7 +23,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.4.3"
+    "react-router-dom": "^6.4.3",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
