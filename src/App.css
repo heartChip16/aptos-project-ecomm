@@ -1,3 +1,4 @@
-/* .wallet-button {
-    background-color: white;
-} */
+.wallet-button {
+    background-color: white !important;
+    color: green !important;
+}

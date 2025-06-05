@@ -15,6 +15,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from '@emotion/react';
 import { useAuth } from '../firebase/Auth';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
+import "../App.css";
+
 
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import { InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react";
