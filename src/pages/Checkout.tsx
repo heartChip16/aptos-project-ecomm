@@ -9,6 +9,9 @@ import { useDispatch } from 'react-redux';
 import { clearCart } from '../feature/cart-slice';
 import { clearCheckoutInfo } from '../feature/checkout-slice';
 
+import { InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react";
+
+
 const steps = ["Shipping Address", "Payment Details", "Review Order"];
 
 function getStepContent(activeStep: any) {
@@ -29,6 +32,12 @@ function getStepContent(activeStep: any) {
 
 
 export default function Checkout() {
+
+    // for Aptos Wallet Petra: 
+    const { account, signAndSubmitTransaction } = useWallet();
+    const [loading, setLoading] = useState(false);
+
+
     const [activeStep, setActiveStep] = useState(0);
     const dispatch = useDispatch();
     useEffect(() => {
