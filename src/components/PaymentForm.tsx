@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import {
     Box,
     TextField,
@@ -21,6 +21,7 @@ interface Payment {
     cardNumber?: string;
     expDate?: string;
     cvv?: string;
+    insufficientBalance?: boolean;
 }
 
 export default function PaymentForm(): JSX.Element {
@@ -35,9 +36,27 @@ export default function PaymentForm(): JSX.Element {
 
     function handleMethodChange(event: SelectChangeEvent<string>): void {
         const value = event.target.value;
+        console.log('method', value);
         setMethod(value);
         dispatch(updatePayment({ method: value }));
+
+        // set the payments.name to 
     }
+
+    useEffect(() => {
+        if (method) {
+            dispatch(updatePayment({ method: method }));
+            console.log('method', method);
+            // if (method === 'crypto') {
+            //     // if method crypto, save the crypto credentials
+
+            // }
+            if (method === 'card') {
+                dispatch(updatePayment({ insufficientBalance: false }));
+            }
+        }
+    }, [method
+    ])
 
     return (
         <>
